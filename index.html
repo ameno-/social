@@ -15,14 +15,93 @@
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/mustache.js"></script>
-	<!--<script src="http://platform.twitter.com/widgets.js"></script>-->
 	<script src="js/linkify.js"></script>
 	<script src="js/script.js"></script>
-	<!--<script src="test.js"></script>-->
+
+
+<script id="twitter" type="x-tmpl-mustache">
+<div class="twitter">
+	<div class="brand">
+		<i class="fa fa-twitter fa-2x"></i>
+		<span class="name">{{name}}</span>
+	</div>
+		<div class="details">
+			<span class="date">{{date}}</span>
+		</div>
+		<p class="content">{{feed}}</p>
+		<ul class="actions">
+			<li>
+				<a class="twitter-reply" href="">
+				<i class="fa fa-reply fa-lg"></i></a>
+			</li>
+			<li>
+				<a class="retweet" href="">
+				<i class="fa fa-retweet fa-lg"></i></a>
+			</li>
+			<li>
+				<a class="twitter-fav" href="">
+				<i class="fa fa-star fa-lg"></i></a>
+			</li>
+		</ul>
+	</div>
+</script>
+
+<script id="googleplus" type="x-tmpl-mustache">
+<div class="googleplus">
+	<div class="brand">
+		<i class="fa fa-google-plus-square fa-3x"></i>
+		<span class="name">{{name}}</span>
+		<br />
+		<span class="date">{{date}}</span>
+	</div>
+		<p class="content">{{feed}}</p>
+			<ul class="actions">
+				<li><a class="googleplus-like" href=""><i class="fa fa-plus"></i><span id="plusVal">{{likes}}</span></a></li>
+				<li><a class="googleplus-reply" href=""><i class="fa fa-reply fa-lg"></i></a></li>
+			</ul>
+	</div>
+</script>
+
+<script id="linkedin" type="x-tmpl-mustache">
+<div class="linkedin">
+		<div class="brand">
+			<span class="name">{{name}}</span>
+		</div>
+		<p class="content">{{feed}}</p>
+		<br />
+		<span class="date">{{date}}</span>
+		
+			<ul class="actions">
+				<li><a class="linkedin-more" href="">see more</a></li>
+				<li><i class="fa fa-linkedin-square fa-3x"></i></li>
+			</ul>
+	</div>
+</script>
+<script id="facebook" type="x-tmpl-mustache">
+<div class="facebook">
+	<div class="brand">
+		<i class="fa fa-facebook-square fa-2x"></i>
+		<span class="name">{{name}}</span>
+	</div>
+		<div class="details">
+			<span class="date">{{likes}} - {{date}} - {{location}}</span>
+		</div>
+		<p class="content">{{feed}}</p>
+			<ul class="actions">
+				<li><a class="facebook-like" href=""><i class="fa fa-thumbs-o-up fa-lg"></i></a></li>
+				<li><a class="facebook-comment" href=""><i class="fa fa-comments-o fa-lg"></i></a></li>
+			</ul>
+	</div>
+</script>
+
 	<script>
 $(window).on('load', function () {
+	
+var data = [{"id":"118133509530413865626","provider":"googleplus","date":"08/21/14","name":"ExportDevCanada","feed":" \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23WeeklyCommentary\"\u003e#WeeklyCommentary\u003c/a\u003e  What is one of the most remarkable features of the Canadian economy in the past 15 years? The diversification of international trade to less-traditional global markets. The tech wreck, the thickening border with the US and the soaring loonie in the mid-2000’s turned the attention of Canada’s exporters to fast-growing emerging markets. But how are Canada’s provinces sharing in this neo-bonanza? \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23cdntrade\"\u003e#cdntrade\u003c/a\u003e   \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23cdnecon\"\u003e#cdnecon\u003c/a\u003e   \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23canadiantrade\"\u003e#canadiantrade\u003c/a\u003e   \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23diversificationstrategy\"\u003e#diversificationstrategy\u003c/a\u003e  ﻿"},{"id":"118133509530413865626","provider":"googleplus","date":"08/21/14","name":"ExportDevCanada","feed":" \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23Proposdelasemaine\"\u003e#Proposdelasemaine\u003c/a\u003e  - La diversification du commerce international vers les marchés mondiaux moins traditionnels compte parmi les éléments ayant le plus marqué l’économie canadienne ces 15 dernières années. Cette transformation vous a déjà été signalée, par moi et sans doute d’autres analystes, mais comment les provinces canadiennes se partagent-elles ce nouveau pactole? \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23cdnecon\"\u003e#cdnecon\u003c/a\u003e   \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23cdntrade\"\u003e#cdntrade\u003c/a\u003e   \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23canadiantrade\"\u003e#canadiantrade\u003c/a\u003e   \u003ca rel=\"nofollow\" class=\"ot-hashtag\" href=\"https://plus.google.com/s/%23diversificationstrategy\"\u003e#diversificationstrategy\u003c/a\u003e  ﻿"},{"id":"118133509530413865626","provider":"googleplus","date":"08/20/14","name":"ExportDevCanada","feed":"Advice and tactics from Canada’s fastest-growing exporters and the editors of PROFIT magazine. \u003ca href=\"http://ow.ly/AxnUr\"\u003ehttp://ow.ly/AxnUr\u003c/a\u003e﻿"},{"id":"118133509530413865626","provider":"googleplus","date":"08/20/14","name":"ExportDevCanada","feed":"Conseils et tactiques des exportateurs les plus dynamiques du Canada et des éditeurs du magazine PROFIT. \u003ca href=\"http://ow.ly/AxnvG\"\u003ehttp://ow.ly/AxnvG\u003c/a\u003e﻿"},{"id":"118133509530413865626","provider":"googleplus","date":"08/18/14","name":"ExportDevCanada","feed":"The best way to profit from U.S. deals is to buy American companies. But it can be a disaster if you don’t consider these 4 key issues. \u003ca href=\"http://ow.ly/Ashtd\"\u003ehttp://ow.ly/Ashtd\u003c/a\u003e﻿"}];
 
-addWidget(getData('sample.json'), $('#target'), $('<div />'));
+	addWidget(data, $('#target'));
+
+	// addWidget(getData('sample.json'), $('#target'), $('<div />'));
 
 });
 	</script>
