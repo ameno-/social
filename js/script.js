@@ -1,7 +1,7 @@
 function addWidget (data, location, wrapper) {
 
 	wrapper == undefined?wrapper = $('<div />'):false;
-	
+
  	var renderedTemplate;
  	//get template content from separate html file
  	var raw = getTemplates();
@@ -47,8 +47,22 @@ function getTemplates (){
     return result;
 }
 
-
-
+function getData(url){
+	var result = null;
+	// var url = 'sample.json';
+	//grab all the widget templates
+    $.ajax({
+        'async': false,
+        'type': "GET",
+        'global': false,
+        'dataType': 'json',
+        'url': url,
+        'success': function (data) {
+            result = data;
+        }
+    });
+    return result;
+};
 
 
 
