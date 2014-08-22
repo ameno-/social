@@ -1,0 +1,76 @@
+<script id="twitter" type="x-tmpl-mustache">
+<div class="twitter">
+	<div class="brand">
+		<i class="fa fa-twitter fa-2x"></i>
+		<span class="name">{{name}}</span>
+	</div>
+		<div class="details">
+			<span class="date">{{date}}</span>
+		</div>
+		<p class="content">{{feed}}</p>
+		<ul class="actions">
+			<li>
+				<a class="twitter-reply" href="">
+				<i class="fa fa-reply fa-lg"></i></a>
+			</li>
+			<li>
+				<a class="retweet" href="">
+				<i class="fa fa-retweet fa-lg"></i></a>
+			</li>
+			<li>
+				<a class="twitter-fav" href="">
+				<i class="fa fa-star fa-lg"></i></a>
+			</li>
+		</ul>
+	</div>
+</script>
+
+<script id="googleplus" type="x-tmpl-mustache">
+<div class="googleplus">
+	<div class="brand">
+		<i class="fa fa-google-plus-square fa-3x"></i>
+		<span class="name">{{name}}</span>
+		<br />
+		<span class="date">{{date}}</span>
+	</div>
+		<p class="content">{{feed}}</p>
+			<ul class="actions">
+				<li><a class="googleplus-like" href=""><i class="fa fa-plus"></i><span id="plusVal">{{likes}}</span></a></li>
+				<li><a class="googleplus-reply" href=""><i class="fa fa-reply fa-lg"></i></a></li>
+			</ul>
+	</div>
+</script>
+
+<script id="linkedin" type="x-tmpl-mustache">
+<div class="linkedin">
+		<div class="brand">
+			<span class="name">{{name}}</span>
+		</div>
+		<p class="content">{{feed}}</p>
+		<br />
+		<span class="date">{{date}}</span>
+		
+			<ul class="actions">
+				<li><a class="linkedin-more" href="">see more</a></li>
+				<li><i class="fa fa-linkedin-square fa-3x"></i></li>
+			</ul>
+	</div>
+</script>
+<script id="facebook" type="x-tmpl-mustache">
+<div class="facebook">
+	<div class="brand">
+		<i class="fa fa-facebook-square fa-2x"></i>
+		<span class="name">{{name}}</span>
+	</div>
+		<div class="details">
+			<span class="date">{{likes}} - {{date}} - {{location}}</span>
+		</div>
+		<p class="content">{{feed}}</p>
+			<ul class="actions">
+				<li><a class="facebook-like" href=""><i class="fa fa-thumbs-o-up fa-lg"></i></a></li>
+				<li><a class="facebook-comment" href=""><i class="fa fa-comments-o fa-lg"></i></a></li>
+			</ul>
+	</div>
+</script>
+
+
