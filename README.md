@@ -1,5 +1,5 @@
 social widgets
 ==============
 
-Made mustache.js and Jquery
+Custom widget templates built with Jquery and Mustache.js
  
